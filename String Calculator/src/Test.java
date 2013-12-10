@@ -25,4 +25,9 @@ public class Test {
 	public void ShouldReturnTheSumOfMoreThanTwoNumbersSplittedByComma(){
 		assertEquals(6,calc.add("1,2,3"));
 	}
+	
+	@org.junit.Test
+	public void AddingANewLineDelimeter(){
+		assertEquals(6,calc.add("1,2\n3"));
+	}
 }
