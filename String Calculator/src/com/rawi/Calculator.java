@@ -23,7 +23,7 @@ public class Calculator {
 			m.matches();
 			String delimeter = m.group(1);
 			String number1 = m.group(2);
-			numbers = number1.split(delimeter);
+			numbers = number1.split(Pattern.quote(delimeter));
 		}else{
 			numbers = number.split(",|\n");
 		}
