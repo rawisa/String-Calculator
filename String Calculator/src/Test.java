@@ -20,4 +20,9 @@ public class Test {
 	public void ShouldReturnTheSumOfTwoNumbersSplittedByComma(){
 		assertEquals(3,calc.add("1,2"));
 	}
+	
+	@org.junit.Test
+	public void ShouldReturnTheSumOfMoreThanTwoNumbersSplittedByComma(){
+		assertEquals(6,calc.add("1,2,3"));
+	}
 }
