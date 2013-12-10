@@ -1,10 +1,13 @@
 package com.rawi;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class Calculator {
 	public int add(String number){
 		if(number.isEmpty()){
 			return 0;
-		}else if(number.contains(",")){
+		}else if(number.contains(",")||number.contains("//")||number.contains("\n")){
 			int sum = sumNumberWithComma(number);
 			return sum;
 		}
@@ -14,7 +17,17 @@ public class Calculator {
 	}
 
 	private int sumNumberWithComma(String number) {
-		String[] numbers = number.split(",|\n");
+		String[] numbers;
+		System.out.println(number);
+		if(number.startsWith("//")){
+			Matcher m = Pattern.compile("//(.)\n(.*)").matcher(number);
+			m.matches();
+			String delimeter = m.group(1);
+			String number1 = m.group(2);
+			numbers = number1.split(delimeter);
+		}else{
+			numbers = number.split(",|\n");
+		}
 		int sum=0;
 		for(int i=0;i<numbers.length;i++)
 			sum+=toInteger(numbers[i]);

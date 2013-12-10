@@ -33,6 +33,6 @@ public class Test {
 	
 	@org.junit.Test
 	public void RandomDelimeter(){
-		assertEquals(3,calc.add("//:\n1:2"));
+		assertEquals(1+2+3+4,calc.add("//;\n1;2;3;4"));
 	}
 }
