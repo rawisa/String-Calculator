@@ -6,10 +6,14 @@ public class Calculator {
 			return 0;
 		}else if(number.contains(",")){
 			String[] numbers = number.split(",");
-			return Integer.parseInt(numbers[0])+Integer.parseInt(numbers[1]);
+			return toInteger(numbers[0])+toInteger(numbers[1]);
 		}
 		else{
-			return Integer.parseInt(number);
+			return toInteger(number);
 		}
+	}
+
+	private int toInteger(String number) {
+		return Integer.parseInt(number);
 	}
 }
