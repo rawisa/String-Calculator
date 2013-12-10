@@ -11,4 +11,10 @@ public class Test {
 		assertEquals(0,calc.add(""));
 	}
 	
+	@org.junit.Test
+	public void ShouldReturnTheNumberItSelf(){
+		Calculator calc = new Calculator();
+		assertEquals(1,calc.add("1"));
+	}
+	
 }
