@@ -4,19 +4,16 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Calculator {
-	public int add(String number){
+	public int add(String number) throws Exception{
 		if(number.isEmpty()){
 			return 0;
-		}else if(number.contains(",")||number.contains("//")||number.contains("\n")){
+		}else{
 			int sum = sumNumberWithDelimeter(number);
 			return sum;
 		}
-		else{
-			return toInteger(number);
-		}
 	}
 
-	private int sumNumberWithDelimeter(String number) {
+	private int sumNumberWithDelimeter(String number) throws Exception {
 		String[] numbers;
 		if(number.startsWith("//")){
 			Matcher m = Pattern.compile("//(.)\n(.*)").matcher(number);
@@ -28,8 +25,15 @@ public class Calculator {
 			numbers = number.split(",|\n");
 		}
 		int sum=0;
-		for(int i=0;i<numbers.length;i++)
+		String minus="";
+		for(int i=0;i<numbers.length;i++){
+			if(toInteger(numbers[i])<0)
+				//minus+=numbers[i]+" ";
+				throw new Exception();
 			sum+=toInteger(numbers[i]);
+		}
+		//if(minus.length()>0)
+			//throw new Exception(minus);
 		return sum;
 	}
 
