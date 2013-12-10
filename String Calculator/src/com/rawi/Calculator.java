@@ -8,7 +8,7 @@ public class Calculator {
 		if(number.isEmpty()){
 			return 0;
 		}else if(number.contains(",")||number.contains("//")||number.contains("\n")){
-			int sum = sumNumberWithComma(number);
+			int sum = sumNumberWithDelimeter(number);
 			return sum;
 		}
 		else{
@@ -16,9 +16,8 @@ public class Calculator {
 		}
 	}
 
-	private int sumNumberWithComma(String number) {
+	private int sumNumberWithDelimeter(String number) {
 		String[] numbers;
-		System.out.println(number);
 		if(number.startsWith("//")){
 			Matcher m = Pattern.compile("//(.)\n(.*)").matcher(number);
 			m.matches();
