@@ -35,4 +35,9 @@ public class Test {
 	public void RandomDelimeter(){
 		assertEquals(1+2+3+4,calc.add("//;\n1;2;3;4"));
 	}
+	
+	@org.junit.Test
+	public void RandomDelimeterWithSpecialChar(){
+		assertEquals(1+2,calc.add("//.\n1.2"));
+	}
 }
