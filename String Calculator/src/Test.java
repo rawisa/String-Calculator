@@ -4,17 +4,20 @@ import com.rawi.Calculator;
 
 
 public class Test {
+	Calculator calc = new Calculator();
 
 	@org.junit.Test
 	public void WillItReturnZero(){
-		Calculator calc = new Calculator();
 		assertEquals(0,calc.add(""));
 	}
 	
 	@org.junit.Test
 	public void ShouldReturnTheNumberItSelf(){
-		Calculator calc = new Calculator();
 		assertEquals(1,calc.add("1"));
 	}
 	
+	@org.junit.Test
+	public void ShouldReturnTheSumOfTwoNumbersSplittedByComma(){
+		assertEquals(3,calc.add("1,2"));
+	}
 }
