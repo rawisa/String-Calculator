@@ -7,7 +7,8 @@ public class Test {
 
 	@org.junit.Test
 	public void WillItReturnZero(){
-		assertEquals(0,Calculator.add(""));
+		Calculator calc = new Calculator();
+		assertEquals(0,calc.add(""));
 	}
 	
 }
