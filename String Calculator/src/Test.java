@@ -40,4 +40,14 @@ public class Test {
 	public void RandomDelimeterWithSpecialChar(){
 		assertEquals(1+2,calc.add("//.\n1.2"));
 	}
+	
+	@org.junit.Test
+	public void DontAllowMinusNumbers(){
+		try{
+			calc.add("-1,2,3");
+			fail("Shouldnt accept minus");
+		}catch(Exception ex){
+			
+		}
+	}
 }
