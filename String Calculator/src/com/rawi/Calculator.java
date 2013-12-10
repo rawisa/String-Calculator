@@ -28,12 +28,12 @@ public class Calculator {
 		String minus="";
 		for(int i=0;i<numbers.length;i++){
 			if(toInteger(numbers[i])<0)
-				//minus+=numbers[i]+" ";
-				throw new Exception();
+				minus+=numbers[i]+" ";
+				//throw new Exception();
 			sum+=toInteger(numbers[i]);
 		}
-		//if(minus.length()>0)
-			//throw new Exception(minus);
+		if(minus.length()>0)
+			throw new Exception(minus);
 		return sum;
 	}
 
