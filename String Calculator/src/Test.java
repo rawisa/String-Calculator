@@ -30,4 +30,9 @@ public class Test {
 	public void AddingANewLineDelimeter(){
 		assertEquals(6,calc.add("1,2\n3"));
 	}
+	
+	@org.junit.Test
+	public void RandomDelimeter(){
+		assertEquals(3,calc.add("//:\n1:2"));
+	}
 }
