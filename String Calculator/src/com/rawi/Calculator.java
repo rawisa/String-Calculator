@@ -14,7 +14,7 @@ public class Calculator {
 	}
 
 	private int sumNumberWithComma(String number) {
-		String[] numbers = number.split(",");
+		String[] numbers = number.split(",|\n");
 		int sum=0;
 		for(int i=0;i<numbers.length;i++)
 			sum+=toInteger(numbers[i]);
